@@ -1,12 +1,8 @@
 package resources;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -31,7 +27,6 @@ public class Base
 			ChromeOptions c= new ChromeOptions();
 			c.merge(cap);
 			String path = System.getProperty("user.dir")+"\\Browsers\\chromedriver.exe";
-			//File f=new File(path);
 			System.setProperty("webdriver.chrome.driver", path);
 			driver=new ChromeDriver(c);
 		}
@@ -44,7 +39,6 @@ public class Base
 			FirefoxOptions f= new FirefoxOptions();
 			f.merge(cap);
 			String path = System.getProperty("user.dir")+"\\Browsers\\geckodriver.exe";
-			//File f=new File(path);
 			System.setProperty("webdriver.gecko.driver", path);
 			driver=new FirefoxDriver(f);
 			
