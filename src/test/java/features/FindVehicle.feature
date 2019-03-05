@@ -1,6 +1,7 @@
 #Author: Sandya.Muchharla@gmail.com
 Feature: Vehicle Registration check
 
+@SmokeTest
 Scenario: Verify if vehicle exists
 Given Initialize the browser with "chrome"
 And Navigate to "https://covercheck.vwfsinsuranceportal.co.uk/" Site
