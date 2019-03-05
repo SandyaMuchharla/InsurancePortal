@@ -28,11 +28,8 @@ public class Base
 			cap.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
 			cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 
-			//Belows to your local browser
 			ChromeOptions c= new ChromeOptions();
 			c.merge(cap);
-			//FirefoxOptions f=new FirefoxOptions();
-			//f.merge(ch);
 			String path = System.getProperty("user.dir")+"\\Browsers\\chromedriver.exe";
 			//File f=new File(path);
 			System.setProperty("webdriver.chrome.driver", path);
@@ -44,11 +41,8 @@ public class Base
 			cap.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
 			cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 
-			//Belows to your local browser
 			FirefoxOptions f= new FirefoxOptions();
 			f.merge(cap);
-			//FirefoxOptions f=new FirefoxOptions();
-			//f.merge(ch);
 			String path = System.getProperty("user.dir")+"\\Browsers\\geckodriver.exe";
 			//File f=new File(path);
 			System.setProperty("webdriver.gecko.driver", path);
