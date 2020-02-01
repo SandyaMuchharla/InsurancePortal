@@ -10,11 +10,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base 
 {
-	public WebDriver driver;
-	public WebDriver initializeDriver(String browserName) throws IOException
+	public static WebDriver driver;
+	public static WebDriver initializeDriver(String browserName) throws IOException
 	{
 	
 		if(browserName.equals("chrome"))
@@ -26,8 +27,9 @@ public class Base
 
 			ChromeOptions c= new ChromeOptions();
 			c.merge(cap);
-			String path = System.getProperty("user.dir")+"\\Browsers\\chromedriver.exe";
-			System.setProperty("webdriver.chrome.driver", path);
+			WebDriverManager.chromedriver().setup();
+//			String path = System.getProperty("user.dir")+"\\Browsers\\chromedriver.exe";
+//			System.setProperty("webdriver.chrome.driver", path);
 			driver=new ChromeDriver(c);
 		}
 		else if (browserName.equals("firefox"))
@@ -38,8 +40,9 @@ public class Base
 
 			FirefoxOptions f= new FirefoxOptions();
 			f.merge(cap);
-			String path = System.getProperty("user.dir")+"\\Browsers\\geckodriver.exe";
-			System.setProperty("webdriver.gecko.driver", path);
+			WebDriverManager.firefoxdriver().setup();
+//			String path = System.getProperty("user.dir")+"\\Browsers\\geckodriver.exe";
+//			System.setProperty("webdriver.gecko.driver", path);
 			driver=new FirefoxDriver(f);
 			
 		}
@@ -49,5 +52,6 @@ public class Base
 		return driver;
 		
 	}
+
 
 }
